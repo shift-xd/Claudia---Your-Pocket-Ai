@@ -23,7 +23,7 @@ The Project is taking Shape!,Claudia Has Received A battery and a connection por
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODIyOSwicHVyIjoiYmxvYl9pZCJ9fQ==--3a75c79d82505cb8d3851e0ac268be2f3a123f42/image.png)
   
 
-## 11/4/2025 7 PM - Ahh Here We are On Schematics !!  
+## 11/4/2025 7 PM - Ah! Here We are On Schematics   
 
 # **Latest Update**  
 i have created a schematic for what my project will look like , the connections and all are pretty much neat but still needs debugging tho ,  
