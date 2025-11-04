@@ -8,9 +8,7 @@
 
 ## 11/4/2025 - I have made the banner and basic sketch of what my idea is !  
 
-Okay, so today I finally took the time to sit down and draw what *Claudia*, my tiny pocket AI driven by an ESP-32, might look like.  Even though it's very rough, you can already see her shape taking shape: an OLED for responses, a microphone for listening, a button for asking, and of course, the ESP-32 core in charge.
-
- Although I didn't have much time, I genuinely like the way this turned out.  It's strange to see a concept that has been in my mind for weeks come to life.  I'll try wiring things up so she says something next; even a simple "Hello" would be really appreciated at this point.
+Okay so today i have decided to sketch out what claudia might look like after debugging and planning and i have made a basic sketch this took a lot of my spare time but i am still happy with this output anyways seeing an idea from my head on paper looks cool af i think claudia is taking shape 
 
  Expect Claudia....
  IMAGES OF SKETCH ATTACHED : 
