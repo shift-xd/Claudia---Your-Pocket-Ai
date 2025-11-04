@@ -6,12 +6,20 @@
   ==================================================================
 -->
 
-## 11/4/2025 - I have made the banner and basic sketch of what my idea is !  
+## 11/4/2025 6 AM - I have made the banner and basic sketch of what my idea is !  
 
 Okay so today i have decided to sketch out what claudia might look like after debugging and planning and i have made a basic sketch this took a lot of my spare time but i am still happy with this output anyways seeing an idea from my head on paper looks cool af i think claudia is taking shape 
 
  Expect Claudia....
  IMAGES OF SKETCH ATTACHED : 
  ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODIyMCwicHVyIjoiYmxvYl9pZCJ9fQ==--487fa92042bcb085cf9ca56fc5da235ab9d5cc35/image.png)
+  
+
+## 11/4/2025 7 AM - Latest Update - I have Sketched The Back Side Of Claudia   
+
+The Project is taking Shape!,Claudia Has Received A battery and a connection portal... Basically the Portal is for routing connections from back side to front and act like a power rail and stuff
+
+**Image of latest sketch**
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODIyOSwicHVyIjoiYmxvYl9pZCJ9fQ==--3a75c79d82505cb8d3851e0ac268be2f3a123f42/image.png)
   
 
