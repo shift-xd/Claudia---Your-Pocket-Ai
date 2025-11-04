@@ -23,3 +23,29 @@ The Project is taking Shape!,Claudia Has Received A battery and a connection por
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODIyOSwicHVyIjoiYmxvYl9pZCJ9fQ==--3a75c79d82505cb8d3851e0ac268be2f3a123f42/image.png)
   
 
+## 11/4/2025 7 PM - Ahh Here We are On Schematics !!  
+
+# **Latest Update**  
+i have created a schematic for what my project will look like , the connections and all are pretty much neat but still needs debugging tho ,  
+
+---
+
+## **Ki-cad**  
+In Kicad i have created new symbols by hand for this projects since the schematics for my components dosen't exist in Kicad ,  
+Changed many Kicad settings like zoom to make it good ,coz old zoom was shitty AF  
+
+---
+
+## **Used Components**  
+- Esp-32  
+- Mic  
+- CD-42  
+- Power Extensions  
+
+---
+
+## **Images Of Schematic**
+---
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODMwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--8ba827abfc72c1266f2bbcb405016bc12c440d09/image.png)
+  
+
