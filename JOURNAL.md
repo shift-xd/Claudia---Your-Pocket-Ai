@@ -49,3 +49,20 @@ Changed many Kicad settings like zoom to make it good ,coz old zoom was shitty A
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODMwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--8ba827abfc72c1266f2bbcb405016bc12c440d09/image.png)
   
 
+## 11/5/2025 - Some Lil Modifications and Addition of a push switch   
+
+## **Latest Update**
+This time around i was just playing around with wire config adding proper //labels and comments and stuff and went ahead and added a lil push switch for activating the mic 
+
+### Reason for a push switch 
+Coz You can held down the push button to ask questions and release to send query 
+
+### Other Updates ? 
+
+Going to make a flowchart on how to code part works 
+
+### Images Of Work Done from KI_cad
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODQ1OSwicHVyIjoiYmxvYl9pZCJ9fQ==--150d3d87d83365afbd45eef799b25002ef3891cc/image.png)
+
+  
+
