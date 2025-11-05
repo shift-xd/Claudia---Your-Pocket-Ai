@@ -49,7 +49,7 @@ Changed many Kicad settings like zoom to make it good ,coz old zoom was shitty A
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODMwNCwicHVyIjoiYmxvYl9pZCJ9fQ==--8ba827abfc72c1266f2bbcb405016bc12c440d09/image.png)
   
 
-## 11/5/2025 - Some Lil Modifications and Addition of a push switch   
+## 11/5/2025 7:19 AM - Some Lil Modifications and Addition of a push switch   
 
 ## **Latest Update**
 This time around i was just playing around with wire config adding proper //labels and comments and stuff and went ahead and added a lil push switch for activating the mic 
@@ -64,5 +64,16 @@ Going to make a flowchart on how to code part works
 ### Images Of Work Done from KI_cad
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODQ1OSwicHVyIjoiYmxvYl9pZCJ9fQ==--150d3d87d83365afbd45eef799b25002ef3891cc/image.png)
 
+  
+
+## 11/5/2025 7:43 AM - A flow chart to understand how this "frickin" works   
+
+## Added Flow chart to the mix 
+
+As i promised, i have made the flow chart on how the code and Claudia Works Together and how Claudia will get its life from Ai
+
+### Images Of Flow Chart for better Under-Standing 
+
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODQ2OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cc7098a4a408e84175b2de26a8a35f9ffa2fb880/image.png)
   
 
