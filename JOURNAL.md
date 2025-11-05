@@ -77,3 +77,17 @@ As i promised, i have made the flow chart on how the code and Claudia Works Toge
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODQ2OSwicHVyIjoiYmxvYl9pZCJ9fQ==--cc7098a4a408e84175b2de26a8a35f9ffa2fb880/image.png)
   
 
+## 11/5/2025 7:49 AM - Big Problem to Tackle   
+
+## Have stumbled upon a big problem or lets say decision 
+
+The thing is doing this on bread board is easier but on PCB its easier said than done 
+
+### Why i Don't prefer PCB ? 
+
+Coz i dont know how to make a PCB on ki-cad gotta learn how , and Bread board is much easier for debugging and stuff 
+
+### The Turing Point
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODQ3MCwicHVyIjoiYmxvYl9pZCJ9fQ==--e3755ac3ff2f67d3beaf452a448e1d4ad545cfc0/image.png)
+  
+
