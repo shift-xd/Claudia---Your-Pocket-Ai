@@ -93,7 +93,7 @@ Coz i dont know how to make a PCB on ki-cad gotta learn how , and Bread board is
 ###### Next I am going to neaten up the schematic and get the full picture ready
   
 
-## 11/6/2025 - # ADDED "FEEDBACK SYSTEM" & 3D GESTURE NAVIGATION   
+## 11/6/2025 - #ADDED "FEEDBACK SYSTEM" & 3D GESTURE NAVIGATION   
 
 # Added Gesture navigation
 
