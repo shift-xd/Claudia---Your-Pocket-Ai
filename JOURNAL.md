@@ -93,3 +93,30 @@ Coz i dont know how to make a PCB on ki-cad gotta learn how , and Bread board is
 ###### Next I am going to neaten up the schematic and get the full picture ready
   
 
+## 11/6/2025 - # ADDED "FEEDBACK SYSTEM" & 3D GESTURE NAVIGATION   
+
+# Added Gesture navigation
+
+
+Added and wired MPU-6050 for controlling Ai with hand movements no button to use the Custom UI on display
+
+
+#### Added Feedback
+
+
+Added Feedback by using a vibration motor for responses like failed prompt or failed connectivity or overall user experience
+
+
+#### Made Changes to the Schematics
+
+
+- added Mpu6050
+- added Vibration motor
+- kinda fixed wiring
+
+
+#### Images of Schematics Attached
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODkzNywicHVyIjoiYmxvYl9pZCJ9fQ==--a307ec4860917f4f7a2c83950d4d6f6b8503483a/image.png)
+
+  
+
