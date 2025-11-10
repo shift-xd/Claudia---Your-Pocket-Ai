@@ -8,10 +8,10 @@ The future’s closer than you think — expect Claudia.
 ---
 
 ### 🖋️ Image of Sketch  
-<img width="608" height="491" alt="Untitled-2025-11-04-0607" src="https://github.com/user-attachments/assets/dcc94f50-3ba8-43cf-8190-38904dec7526" />
+<img width="420" height="340" alt="Untitled-2025-11-04-0607" src="https://github.com/user-attachments/assets/dcc94f50-3ba8-43cf-8190-38904dec7526" />
 
 ### 📸 Image of Claudia  
-<img width="996" height="587" alt="image (1)" src="https://github.com/user-attachments/assets/411eda73-c77d-4df0-8a6f-2e68a03b61ce" />
+<img width="720" height="420" alt="image (1)" src="https://github.com/user-attachments/assets/411eda73-c77d-4df0-8a6f-2e68a03b61ce" />
 
 ---
 
