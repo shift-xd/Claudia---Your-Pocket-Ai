@@ -120,3 +120,15 @@ Added Feedback by using a vibration motor for responses like failed prompt or fa
 
   
 
+## 11/10/2025 - Last Update Before Shipping   
+
+#### CLAUDIA FARE YE WELL 
+
+We are Gonna Ship Claudia , As of now due to cost constrains we will make her on a Bread Board 
+So, we only require costs of components and tokens for tools as i only have a flat head screwdriver and will require some soldering stuff to get this working hoping hack-club funds me well 
+yours 
+~Albin Anil
+
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTk0MiwicHVyIjoiYmxvYl9pZCJ9fQ==--19d2c9090ee7b5111fd0d7800bd8671f9239d32a/image.png)
+  
+
