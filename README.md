@@ -38,4 +38,9 @@ The future’s closer than you think — expect Claudia.
 | **Jumper Wires** | ~20 | Male-to-male | Connections |
 | **Breadboard** | 1 | 830 tie-points | Prototyping base |
 
+### Also Attaching Claudia 3d Model 
+<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-30" src="https://github.com/user-attachments/assets/292958a3-6dec-439d-94c7-904a1cb1d10c" />
+<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-37" src="https://github.com/user-attachments/assets/26fef7ff-cb10-41c5-b691-bd92450cdcc2" />
+<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-47" src="https://github.com/user-attachments/assets/d6f9c3c0-e208-41aa-b806-51c3591f5f9d" />
+
 
