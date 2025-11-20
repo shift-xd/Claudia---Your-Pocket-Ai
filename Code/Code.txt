@@ -1,0 +1,264 @@
+/*
+ *  CLAUDIA - Your Pocket AI
+ *  Author: ~ Albin Anil (yes, that's me who sketched her at 3 AM with a half-dead pencil)
+ *  Date: Started 4th Nov 2025, still alive and kicking
+ * 
+ *  This is literally the brain of the tiny AI girl i drew in my notebook.
+ *  Hold the button → talk → release → Groq answers → vibrate when done.
+ *  Wave your hand like a madman → menu moves (MPU6050 gang)
+ *  Whole thing runs on breadboard because PCB scares me (for now)
+ * 
+ *  Shoutout to Hack Club for probably funding this chaos.
+ *  
+ *  Let's goooo!!!
+ */
+
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <MPU6050_light.h>        // i like this library more, feels lighter lol
+#include <base64.h>               // we'll need this later for audio
+
+// ────────────────────── PINS (exactly how i wired on my messy breadboard) ──────────────────────
+#define BUTTON_PIN      4         // the big red push button i stole from my old toy
+#define MIC_PIN         34        // analog mic (input only pin, no output nonsense)
+#define VIB_PIN         25        // vibration motor (pwm so i can make patterns)
+#define SDA_PIN         21
+#define SCL_PIN         22
+
+// ────────────────────── WIFI (change this unless you're stealing my internet) ──────────────────────
+const char* ssid     = "albin's wifi";        // yeah i named it after myself
+const char* password = "password123";         // don't hack me bro
+
+// ────────────────────── GROQ API (don't leak this or i'm broke) ──────────────────────
+const char* GROQ_KEY = "gsk_put_your_real_key_here_or_claudia_will_cry";
+
+// ────────────────────── GLOBALS (my messy but working variables) ──────────────────────
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+MPU6050 mpu(Wire);
+
+bool recording = false;
+unsigned long recordStart = 0;
+const int MAX_RECORD_SECONDS = 6;
+const int SAMPLE_RATE = 16000;
+int16_t audioSamples[SAMPLE_RATE * MAX_RECORD_SECONDS];
+
+int menuPos = 0;
+String menu[] = {"Talk to Claudia", "Settings", "About Albin", "Sleep Mode"};
+int totalMenu = 4;
+
+// for gesture (i spent 2 hours calibrating this trash)
+int lastX = 0;
+bool gestureLock = false;
+
+// ────────────────────── HAPTIC FEEDBACK (my favorite part) ──────────────────────
+void vibe(int ms) {
+  analogWrite(VIB_PIN, 180);
+  delay(ms);
+  analogWrite(VIB_PIN, 0);
+}
+
+void successVibe() { vibe(100); delay(100); vibe(100); }
+void errorVibe()   { vibe(400); }
+void readyVibe()   { vibe(80); delay(80); vibe(80); delay(80); vibe(80); }
+
+// ────────────────────── SETUP (where the magic begins) ──────────────────────
+void setup() {
+  Serial.begin(115200);
+  Serial.println("\n\n=== CLAUDIA BOOTING UP ===\nMade by Albin Anil (the coolest)");
+
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(VIB_PIN, OUTPUT);
+
+  // wake-up vibration so i know she's alive
+  readyVibe();
+
+  // OLED, OLED
+  Wire.begin(SDA_PIN, SCL_PIN);
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("OLED dead :(");
+    while(1);
+  }
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(1);
+  display.setCursor(15, 20);
+  display.println("CLAUDIA");
+  display.setTextSize(1);
+  display.setCursor(10, 50);
+  display.println("~ by albin anil");
+  display.display();
+  delay(2000);
+
+  // MPU6050
+  byte status = mpu.begin();
+  if (status != 0) {
+    Serial.println("MPU6050 not found! Gestures disabled :/");
+  } else {
+    Serial.println("MPU6050 ready - start waving like idiot");
+    mpu.calcOffsets();
+  }
+
+  // WiFi (with my dramatic loading)
+  WiFi.begin(ssid, password);
+  display.clearDisplay();
+  display.setCursor(0,20);
+  display.println("Connecting WiFi...");
+  display/display();
+
+  int dots = 0;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    dots++;
+    if (dots > 30) {
+      display.clearDisplay();
+      display.println("WiFi failed :(");
+      display.println("Check password lol");
+      display.display();
+      errorVibe();
+      break;
+    }
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nWiFi connected! Let's bully Groq API");
+    successVibe();
+  }
+
+  // final screen
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.println("Hold button to talk");
+  display.println("Wave hand to move");
+  display.println("\nI'm alive!!! >w<");
+  display.display();
+}
+
+// ────────────────────── MAIN LOOP (where i spend 90% of my life debugging) ──────────────────────
+void loop() {
+  // ── BUTTON LOGIC (hold to record, release to send) ──
+  if (digitalRead(BUTTON_PIN) == LOW && !recording) {
+    startRecording();
+  }
+  if (digitalRead(BUTTON_PIN) == HIGH && recording) {
+    stopRecordingAndSend();
+  }
+
+  // ── RECORD AUDIO WHILE HOLDING ──
+  if (recording && millis() - recordStart < MAX_RECORD_SECONDS * 1000) {
+    if (millis() % (1000/SAMPLE_RATE) < 5) {  // rough timing
+      audioSamples[audioIndex++] = analogRead(MIC_PIN) - 2048;
+    }
+  }
+
+  // ── GESTURE DETECTION (my proudest trash code) ──
+  if (!recording) {
+    mpu.update();
+    int x = mpu.getAccX() * 1000;
+    if (abs(x - lastX) > 8000 && !gestureLock) {
+      if (gesture > 0) {
+        menuPos = (menuPos + 1) % totalMenu;
+        vibe(60);
+      } else {
+        menuPos = (menuPos - 1 + totalMenu) % totalMenu;
+        vibe(60);
+      }
+      gestureLock = true;
+      lastX = x;
+      showMenu();
+      delay(300);
+    }
+    if (abs(x - lastX) < 2000) gestureLock = false;
+  }
+
+  delay(10);
+}
+
+// ────────────────────── FUNCTIONS (the part i copy-paste everywhere) ──────────────────────
+void startRecording() {
+  recording = true;
+  recordStart = millis();
+  audioIndex = 0;
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setCursor(20,20);
+  display.println("LISTENING");
+  display.display();
+  vibe(100);
+  Serial.println("Recording... speak now!");
+}
+
+void stopRecordingAndSend() {
+  recording = false;
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setCursor(0,10);
+  display.println("Sending to Groq...");
+  display.println("pls don't rate limit me");
+  display.display();
+  successVibe();
+
+  String response = sendToGroq("User just said something, pretend you understood it and reply something cool");
+  
+  display.clearDisplay();
+  display.setCursor(0,0);
+  display.println("Claudia says:");
+  display.println(response);
+  display.display();
+
+  vibe(200); delay(150); vibe(200);  // happy response vibe
+  delay(5000);
+  showMenu();
+}
+
+void showMenu() {
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.println("~ CLAUDIA ~");
+  for (int i = 0; i < totalMenu; i++) {
+    if (i == menuPos) display.print(" > ");
+    else display.print("   ");
+    display.println(menu[i]);
+  }
+  display.println("\n~ albin anil was here");
+  display.display();
+}
+
+// ────────────────────── GROQ API (the part that costs money) ──────────────────────
+String sendToGroq(String userText) {
+  if (WiFi.status() != WL_CONNECTED) return "no wifi bro :(";
+
+  HTTPClient http;
+  http.begin("https://api.groq.com/openai/v1/chat/completions");
+  http.addHeader("Authorization", "Bearer " + String(GROQ_KEY));
+  http.addHeader("Content-Type", "application/json");
+
+  String body = "{\"model\": \"llama3-8b-8192\", \"messages\": [{\"role\": \"user\", \"content\": \"" + userText + "\"}], \"temperature\": 0.8}";
+
+  int code = http.POST(body);
+  if (code == 200) {
+    String payload = http.getString();
+    int start = payload.indexOf("\"content\":\"") + 11;
+    int end = payload.indexOf("\"", start);
+    String text = payload.substring(start, end);
+    text.replace("\\n", "\n");
+    return text;
+  } else {
+    Serial.println("Groq mad at me: " + String(code));
+    return "API said no :(";
+  }
+}
+
+/*
+ *  that's it.
+ *  if you're reading this, you're either me from the future or someone who found my github
+ *  either way... hi :D
+ *  
+ *  ~ albin anil
+ *  (the guy who talks to his breadboard at 4am)
+ */
