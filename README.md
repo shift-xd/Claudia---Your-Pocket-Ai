@@ -35,8 +35,5 @@ Hello Everyone , This is Claudia Your Pocket Ai Claudia uses Esp 32 and Groq Api
 | **Breadboard** | 1 | 830 tie-points | Prototyping base |
 
 ### Also Attaching Claudia 3d Model 
-<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-30" src="https://github.com/user-attachments/assets/292958a3-6dec-439d-94c7-904a1cb1d10c" />
-<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-37" src="https://github.com/user-attachments/assets/26fef7ff-cb10-41c5-b691-bd92450cdcc2" />
-<img width="775" height="621" alt="Screenshot From 2025-11-17 07-27-47" src="https://github.com/user-attachments/assets/d6f9c3c0-e208-41aa-b806-51c3591f5f9d" />
-
-
+<img width="400" height="325.5" alt="Claudia Top 3d " src="https://github.com/user-attachments/assets/1393c056-e1b5-4194-88b4-aefc4f25da31" />
+<img width="400" height="325.5" alt="Claudia Bottom 3d " src="https://github.com/user-attachments/assets/aa6efe00-bb9d-485a-a590-654a976dea97" />
